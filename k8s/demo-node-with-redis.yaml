@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-node-connect-redis
+spec:
+  containers:
+    - image: hoangnguyen147/sample-node-with-redis
+      name: node-connect-redis

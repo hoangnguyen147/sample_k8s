@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo-rs
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+    - {key: app, operator: In, values: [demo-rs, demo-rs-2]}
+  template:
+    metadata:
+      labels:
+        app: demo-rs
+    spec:
+      containers:
+      - image: hoangnguyen147/sample-node-demo
+        name: sample-node-container
+        ports:
+          - containerPort: 3000

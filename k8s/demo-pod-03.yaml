@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod-namespace
+  namespace: staging
+spec:
+  containers:
+    - image: hoangnguyen147/sample-node-demo
+      name: sample-pod-namespace
+      ports:
+        - containerPort: 3000
+          protocol: TCP

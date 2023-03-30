@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: demo-rc
+spec:
+  replicas: 4
+  selector:
+    app: demo-rc
+  template:
+    metadata:
+      labels:
+        app: demo-rc
+    spec:
+      containers:
+      - image: hoangnguyen147/sample-node-demo
+        name: sample-node-container
+        ports:
+          - containerPort: 3000
